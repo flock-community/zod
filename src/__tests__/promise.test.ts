@@ -1,6 +1,6 @@
-import * as z from '..';
-import { util } from '../helpers/util';
-import { ZodError } from '../ZodError';
+import * as z from '../index.ts';
+import { util } from '../helpers/util.ts';
+import { ZodError } from '../ZodError.ts';
 
 const promSchema = z.promise(
   z.object({

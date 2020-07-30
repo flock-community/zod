@@ -1,9 +1,9 @@
-import * as z from './base';
-import { ZodUndefined } from './undefined';
-// import { ZodNull } from './null';
-import { ZodUnion } from './union';
-import { objectUtil } from '../helpers/objectUtil';
-import { partialUtil } from '../helpers/partialUtil';
+import * as z from './base.ts';
+import { ZodUndefined } from './undefined.ts';
+// import { ZodNull } from './null.ts';
+import { ZodUnion } from './union.ts';
+import { objectUtil } from '../helpers/objectUtil.ts';
+import { partialUtil } from '../helpers/partialUtil.ts';
 
 const AugmentFactory = <Def extends ZodObjectDef>(def: Def) => <Augmentation extends z.ZodRawShape>(
   augmentation: Augmentation,

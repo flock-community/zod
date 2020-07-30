@@ -1,9 +1,9 @@
-import * as z from './base';
-import { ZodTuple } from './tuple';
-// import { ZodUndefined } from './undefined';
-// import { ZodNull } from './null';
-// import { ZodUnion } from './union';
-import { ZodVoid } from './void';
+import * as z from './base.ts';
+import { ZodTuple } from './tuple.ts';
+// import { ZodUndefined } from './undefined.ts';
+// import { ZodNull } from './null.ts';
+// import { ZodUnion } from './union.ts';
+import { ZodVoid } from './void.ts';
 
 export interface ZodFunctionDef<
   Args extends ZodTuple<any> = ZodTuple<any>,

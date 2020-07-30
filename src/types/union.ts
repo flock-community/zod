@@ -1,6 +1,6 @@
-import * as z from './base';
-// import { ZodUndefined } from './undefined';
-// import { ZodNull } from './null';
+import * as z from './base.ts';
+// import { ZodUndefined } from './undefined.ts';
+// import { ZodNull } from './null.ts';
 
 export interface ZodUnionDef<
   T extends [z.ZodTypeAny, z.ZodTypeAny, ...z.ZodTypeAny[]] = [z.ZodTypeAny, z.ZodTypeAny, ...z.ZodTypeAny[]]

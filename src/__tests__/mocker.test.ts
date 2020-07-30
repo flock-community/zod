@@ -1,4 +1,4 @@
-import { Mocker } from '../helpers/Mocker';
+import { Mocker } from '../helpers/Mocker.ts';
 
 test('mocker', () => {
   const mocker = new Mocker();

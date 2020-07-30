@@ -1,9 +1,9 @@
-import * as z from './base';
-// import { ZodUndefined } from './undefined';
-// import { ZodNull } from './null';
-// import { ZodUnion } from './union';
-import { ZodErrorCode } from '../ZodError';
-import { errorUtil } from '../helpers/errorUtil';
+import * as z from './base.ts';
+// import { ZodUndefined } from './undefined.ts';
+// import { ZodNull } from './null.ts';
+// import { ZodUnion } from './union.ts';
+import { ZodErrorCode } from '../ZodError.ts';
+import { errorUtil } from '../helpers/errorUtil.ts';
 
 export interface ZodStringDef extends z.ZodTypeDef {
   t: z.ZodTypes.string;

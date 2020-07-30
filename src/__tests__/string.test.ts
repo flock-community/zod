@@ -1,4 +1,4 @@
-import * as z from '..';
+import * as z from '../index.ts';
 
 const minFive = z.string().min(5, 'min5');
 const maxFive = z.string().max(5, 'max5');

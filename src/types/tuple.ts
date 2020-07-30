@@ -1,7 +1,7 @@
-import * as z from './base';
-// import { ZodUnion } from './union';
-// import { ZodUndefined } from './undefined';
-// import { ZodNull } from './null';
+import * as z from './base.ts';
+// import { ZodUnion } from './union.ts';
+// import { ZodUndefined } from './undefined.ts';
+// import { ZodNull } from './null.ts';
 
 export type TypeOfTuple<T extends [z.ZodTypeAny, ...z.ZodTypeAny[]] | []> = {
   [k in keyof T]: T[k] extends z.ZodType<infer U> ? U : never;

@@ -1,5 +1,5 @@
-import * as z from '../index';
-import { util } from '../helpers/util';
+import * as z from '../index.ts';
+import { util } from '../helpers/util.ts';
 
 const Test = z.object({
   f1: z.number(),

@@ -1,6 +1,6 @@
-import * as z from '../index';
-import { ZodError } from '../ZodError';
-import { util } from '../helpers/util';
+import * as z from '../index.ts';
+import { ZodError } from '../ZodError.ts';
+import { util } from '../helpers/util.ts';
 
 const testTuple = z.tuple([z.string(), z.object({ name: z.literal('Rudy') }), z.array(z.literal('blue'))]);
 

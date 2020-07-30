@@ -1,5 +1,5 @@
-import * as z from '..';
-import { crazySchema } from './complex.test';
+import * as z from '../index.ts';
+import { crazySchema } from './complex.test.ts';
 
 test('ZodCodeGenerator', () => {
   const gen = new z.ZodCodeGenerator();

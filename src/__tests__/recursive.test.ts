@@ -1,4 +1,4 @@
-import * as z from '../index';
+import * as z from '../index.ts';
 
 interface A {
   val: number;

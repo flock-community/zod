@@ -1,6 +1,6 @@
-import { ZodRawShape, ZodTypes } from '../types/base';
-import { ZodIntersection } from '../types/intersection';
-import { ZodObject } from '../types/object';
+import { ZodRawShape, ZodTypes } from '../types/base.ts';
+import { ZodIntersection } from '../types/intersection.ts';
+import { ZodObject } from '../types/object.ts';
 
 export namespace objectUtil {
   export interface ZodObjectParams {

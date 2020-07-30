@@ -1,5 +1,5 @@
-import * as z from '..';
-import { util } from '../helpers/util';
+import * as z from '../index.ts';
+import { util } from '../helpers/util.ts';
 
 const fish = z.object({
   name: z.string(),

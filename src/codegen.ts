@@ -1,5 +1,5 @@
-import * as z from '.';
-import { util } from './helpers/util';
+import * as z from './index.ts';
+import { util } from './helpers/util.ts';
 
 type TypeResult = { schema: any; id: string; type: string };
 

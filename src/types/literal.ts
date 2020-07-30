@@ -1,8 +1,8 @@
-import * as z from './base';
-// import { ZodUndefined } from './undefined';
-// import { ZodNull } from './null';
-// import { ZodUnion } from './union';
-import { Primitive } from '../helpers/primitive';
+import * as z from './base.ts';
+// import { ZodUndefined } from './undefined.ts';
+// import { ZodNull } from './null.ts';
+// import { ZodUnion } from './union.ts';
+import { Primitive } from '../helpers/primitive.ts';
 
 type LiteralValue = Primitive;
 

@@ -1,8 +1,8 @@
-import * as z from './types/base';
-import { ZodDef } from '.';
-import { ZodError, ZodErrorCode, ZodSuberror, ZodSuberrorOptionalMessage } from './ZodError';
-import { util } from './helpers/util';
-import { ZodErrorMap, defaultErrorMap } from './defaultErrorMap';
+import * as z from './types/base.ts';
+import { ZodDef } from './index.ts';
+import { ZodError, ZodErrorCode, ZodSuberror, ZodSuberrorOptionalMessage } from './ZodError.ts';
+import { util } from './helpers/util.ts';
+import { ZodErrorMap, defaultErrorMap } from './defaultErrorMap.ts';
 
 export type ParseParams = {
   seen?: { schema: any; objects: any[] }[];

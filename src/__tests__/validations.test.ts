@@ -1,4 +1,4 @@
-import * as z from '..';
+import * as z from '../index.ts';
 
 test('array min', () => {
   z.array(z.string())

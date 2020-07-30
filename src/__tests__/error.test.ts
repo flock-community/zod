@@ -1,6 +1,6 @@
-import * as z from '..';
-import { ZodError, ZodErrorCode } from '../ZodError';
-import { ZodParsedType } from '../parser';
+import * as z from '../index.ts';
+import { ZodError, ZodErrorCode } from '../ZodError.ts';
+import { ZodParsedType } from '../parser.ts';
 
 test('error creation', () => {
   const err1 = ZodError.create([]);

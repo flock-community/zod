@@ -1,7 +1,7 @@
-import * as z from './base';
-// import { ZodUndefined } from './undefined';
-// import { ZodNull } from './null';
-// import { ZodUnion } from './union';
+import * as z from './base.ts';
+// import { ZodUndefined } from './undefined.ts';
+// import { ZodNull } from './null.ts';
+// import { ZodUnion } from './union.ts';
 
 export interface ZodBigIntDef extends z.ZodTypeDef {
   t: z.ZodTypes.bigint;

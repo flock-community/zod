@@ -18,7 +18,6 @@
     "url": "https://github.com/vriad/zod/issues"
   },
   "homepage": "https://github.com/vriad/zod",
-  "dependencies": {},
   "tags": [
     "typescript",
     "schema",
@@ -34,7 +33,7 @@
     "inference"
   ],
   "scripts": {
-    "clean": "rm -rf lib/*",
+    "clean": "rm -rf lib/* && rm -rf deno_lib",
     "build": "yarn run clean && tsc --p tsconfig.package.json",
     "buildall": "yarn add typescript@3.4 && yarn build && yarn add typescript@3.5 && yarn build && yarn add typescript@3.6 && yarn build && yarn add typescript@3.7 && yarn build && yarn add typescript@3.8 && yarn build && yarn add typescript@3.9 && yarn build && yarn add typescript@4 && yarn build && yarn add typescript@3.4",
     "buildallv2": "yarn add typescript@3.7 && yarn build && yarn add typescript@3.8 && yarn build && yarn add typescript@3.9 && yarn build && yarn add typescript@4.0 && yarn build && yarn add typescript@4.1 && yarn build && yarn add typescript@3.7",
@@ -42,12 +41,15 @@
     "lint": "tslint -p tsconfig.json",
     "test": "jest --coverage && yarn run badge",
     "testone": "jest",
-    "badge": "make-coverage-badge --output-path ./coverage.svg",
+    "badge": "make-coverage-badge --report-path ./src/coverage/coverage-summary.json --output-path ./coverage.svg",
     "prepublishOnly": "npm run build",
-    "play": "nodemon -e ts -w . -x ts-node src/playground.ts --project tsconfig.package.json"
+    "play": "nodemon -e ts -w . -x ts-node src/playground.ts --project tsconfig.package.json",
+    "deno_build": "denoify && node deno_scripts/UpdateTestImports.js",
+    "deno_test": "deno test deno_lib/__tests__"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
+    "denoify": "^0.5.12",
     "jest": "^25.1.0",
     "make-coverage-badge": "^1.2.0",
     "nodemon": "^2.0.2",
@@ -56,5 +58,8 @@
     "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "3.7"
+  },
+  "denoify": {
+    "replacer": "scripts/customReplacer.js"
   }
 }

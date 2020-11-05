@@ -1,35 +1,30 @@
 Arguments: 
-  /Users/colinmcd94/.nvm/versions/node/v10.15.3/bin/node /Users/colinmcd94/.nvm/versions/node/v10.15.3/bin/yarn add typescript @3.5
+  /Users/willemveelenturf/.nvm/versions/node/v12.18.3/bin/node /Users/willemveelenturf/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/bin/yarn.js run build
 
 PATH: 
-  /Users/colinmcd94/google-cloud-sdk/bin:/Users/colinmcd94/mongodb/bin:/Users/colinmcd94/.config/yarn/global/node_modules/.bin:/usr/local/Cellar/node/8.1.0_1/bin:/opt/local/bin:/opt/local/sbin:/Users/colinmcd94/.nvm/versions/node/v10.15.3/bin:/Users/colinmcd94/.yarn/bin:/Users/colinmcd94/.config/yarn/global/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin:/usr/local/bin:/Users/colinmcd94/Documents/Projects/flutter/bin:/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home:/Library/gurobi651/mac64/bin/:/Applications/Julia-0.4.5.app/Contents/Resources/julia/bin/julia:/Users/colinmcd94/Library/Android/sdk/tools:/Users/colinmcd94/Library/Android/sdk/platform-tools
+  /Users/willemveelenturf/Downloads/google-cloud-sdk/bin:/Users/willemveelenturf/.nvm/versions/node/v12.18.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.22.4
 
 Node version: 
-  10.15.3
+  12.18.3
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@3.5: Request "https://registry.yarnpkg.com/@3.5" returned a 405
-      at Request.params.callback [as _callback] (/Users/colinmcd94/.nvm/versions/node/v10.15.3/lib/node_modules/yarn/lib/cli.js:66996:18)
-      at Request.self.callback (/Users/colinmcd94/.nvm/versions/node/v10.15.3/lib/node_modules/yarn/lib/cli.js:140748:22)
-      at Request.emit (events.js:189:13)
-      at Request.<anonymous> (/Users/colinmcd94/.nvm/versions/node/v10.15.3/lib/node_modules/yarn/lib/cli.js:141720:10)
-      at Request.emit (events.js:189:13)
-      at IncomingMessage.<anonymous> (/Users/colinmcd94/.nvm/versions/node/v10.15.3/lib/node_modules/yarn/lib/cli.js:141642:12)
-      at Object.onceWrapper (events.js:277:13)
-      at IncomingMessage.emit (events.js:194:15)
-      at endReadableNT (_stream_readable.js:1125:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  SyntaxError: /Users/willemveelenturf/projects/flock/zod/package.json: Unexpected token } in JSON at position 1877
+      at JSON.parse (<anonymous>)
+      at /Users/willemveelenturf/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/willemveelenturf/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/willemveelenturf/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
     "name": "zod",
-    "version": "1.7.1",
+    "version": "2.0.0-beta.15",
     "description": "TypeScript-first schema declaration and validation library with static type inference",
     "main": "./lib/src/index.js",
     "types": "./lib/src/index.d.ts",
@@ -47,7 +42,9 @@ npm manifest:
       "url": "https://github.com/vriad/zod/issues"
     },
     "homepage": "https://github.com/vriad/zod",
-    "dependencies": {},
+    "dependencies": {
+      "denoify": "^0.6.1"
+    },
     "tags": [
       "typescript",
       "schema",
@@ -63,15 +60,17 @@ npm manifest:
       "inference"
     ],
     "scripts": {
-      "clean": "rm -rf lib/*",
-      "build": "yarn run clean && tsc --p tsconfig.package.json",
+      "clean": "rm -rf lib/* && rm -rf deno_lib ",
+      "build": "yarn run clean && tsc --p tsconfig.package.json && denoify",
+      "buildall": "yarn add typescript@3.4 && yarn build && yarn add typescript@3.5 && yarn build && yarn add typescript@3.6 && yarn build && yarn add typescript@3.7 && yarn build && yarn add typescript@3.8 && yarn build && yarn add typescript@3.9 && yarn build && yarn add typescript@4 && yarn build && yarn add typescript@3.4",
+      "buildallv2": "yarn add typescript@3.7 && yarn build && yarn add typescript@3.8 && yarn build && yarn add typescript@3.9 && yarn build && yarn add typescript@4.0 && yarn build && yarn add typescript@4.1 && yarn build && yarn add typescript@3.7",
       "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
       "lint": "tslint -p tsconfig.json",
-      "test": "jest --config jestconfig.json --coverage && yarn run badge",
-      "testone": "jest --config jestconfig.json ",
+      "test": "jest --coverage && yarn run badge",
+      "testone": "jest",
       "badge": "make-coverage-badge --output-path ./coverage.svg",
       "prepublishOnly": "npm run build",
-      "play": "nodemon -e ts -w . -x ts-node src/playground.ts"
+      "play": "nodemon -e ts -w . -x ts-node src/playground.ts --project tsconfig.package.json",
     },
     "devDependencies": {
       "@types/jest": "^25.1.4",
@@ -82,7 +81,10 @@ npm manifest:
       "ts-jest": "^25.2.1",
       "tslint": "^6.1.0",
       "tslint-config-prettier": "^1.18.0",
-      "typescript": "3.2"
+      "typescript": "3.7"
+    },
+    "denoify": {
+      "replacer": "lib/customReplacer.js"
     }
   }
 
@@ -3787,10 +3789,10 @@ Lockfile:
     dependencies:
       is-typedarray "^1.0.0"
   
-  typescript@3.2:
-    version "3.2.4"
-    resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
-    integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
+  typescript@3.7:
+    version "3.7.5"
+    resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.5.tgz#0692e21f65fd4108b9330238aac11dd2e177a1ae"
+    integrity sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==
   
   undefsafe@^2.0.2:
     version "2.0.3"
